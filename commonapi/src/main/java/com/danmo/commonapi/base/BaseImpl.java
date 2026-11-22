@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2017 GcsSloop
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,7 @@
 package com.danmo.commonapi.base;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.danmo.commonapi.converter.StringConverterFactory;
 
@@ -31,8 +31,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 /**
- * 实现类，具体实现在此处
- *
+ * 瀹炵幇绫伙紝鍏蜂綋瀹炵幇鍦ㄦ澶? *
  * @param <Service>
  */
 public class BaseImpl<Service> {
@@ -59,37 +58,35 @@ public class BaseImpl<Service> {
 
     private void initRetrofit(String baseUrl, int currentParse) {
 
-        // 设置 Log 拦截器，可以用于以后处理一些异常情况
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        // 璁剧疆 Log 鎷︽埅鍣紝鍙互鐢ㄤ簬浠ュ悗澶勭悊涓€浜涘紓甯告儏鍐?        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-        // 配置 client
+        // 閰嶇疆 client
         OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(interceptor)                // 设置拦截器
-                .retryOnConnectionFailure(true)             // 是否重试
-                .connectTimeout(5, TimeUnit.SECONDS)        // 连接超时事件
-                .readTimeout(5, TimeUnit.SECONDS)           // 读取超时时间
+                .addInterceptor(interceptor)                // 璁剧疆鎷︽埅鍣?                .retryOnConnectionFailure(true)             // 鏄惁閲嶈瘯
+                .connectTimeout(5, TimeUnit.SECONDS)        // 杩炴帴瓒呮椂浜嬩欢
+                .readTimeout(5, TimeUnit.SECONDS)           // 璇诲彇瓒呮椂鏃堕棿
                 .build();
 
-        // 配置 Retrofit
+        // 閰嶇疆 Retrofit
 
         if (currentParse == Constant.PARSE_GSON) {
             Retrofit.Builder builder = new Retrofit.Builder();
-            mRetrofit = builder.baseUrl(baseUrl)                         // 设置 base url
-                    .client(client)                                     // 设置 client
-                    .addConverterFactory(GsonConverterFactory.create()) // 设置 Json 转换工具
+            mRetrofit = builder.baseUrl(baseUrl)                         // 璁剧疆 base url
+                    .client(client)                                     // 璁剧疆 client
+                    .addConverterFactory(GsonConverterFactory.create()) // 璁剧疆 Json 杞崲宸ュ叿
                     .build();
         } else if (currentParse == Constant.PARSE_XML) {
             Retrofit.Builder builder = new Retrofit.Builder();
-            mRetrofit = builder.baseUrl(baseUrl)                         // 设置 base url
-                    .client(client)                                     // 设置 client
-                    .addConverterFactory(SimpleXmlConverterFactory.create())// 设置xml转换工具
+            mRetrofit = builder.baseUrl(baseUrl)                         // 璁剧疆 base url
+                    .client(client)                                     // 璁剧疆 client
+                    .addConverterFactory(SimpleXmlConverterFactory.create())// 璁剧疆xml杞崲宸ュ叿
                     .build();
         } else {
             Retrofit.Builder builder = new Retrofit.Builder();
-            mRetrofit = builder.baseUrl(baseUrl)                         // 设置 base url
-                    .client(client)                                     // 设置 client
-                    .addConverterFactory(StringConverterFactory.create()) // 设置 string 转换工具
+            mRetrofit = builder.baseUrl(baseUrl)                         // 璁剧疆 base url
+                    .client(client)                                     // 璁剧疆 client
+                    .addConverterFactory(StringConverterFactory.create()) // 璁剧疆 string 杞崲宸ュ叿
                     .build();
         }
 
@@ -97,6 +94,7 @@ public class BaseImpl<Service> {
 
 
 }
+
 
 
 

@@ -1,15 +1,15 @@
-package com.danmo.ithouse.activity;
+﻿package com.danmo.ithouse.activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.support.design.widget.AppBarLayout;
+import com.google.android.material.appbar.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.util.ArrayMap;
-import android.support.v4.view.ViewCompat;
+import androidx.core.view.ViewCompat;
 import android.support.v7.view.menu.MenuBuilder;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,7 +49,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 普通内容详情页类型页面
+ * 鏅€氬唴瀹硅鎯呴〉绫诲瀷椤甸潰
  */
 public class NewsDetailActivity extends BaseActivity implements AppBarLayout.OnOffsetChangedListener {
 
@@ -58,13 +58,11 @@ public class NewsDetailActivity extends BaseActivity implements AppBarLayout.OnO
     private boolean mIsImageHidden;
     private TextView tvTime, tvAuthor, tvZebian;
     private ViewGroup mTopSub;
-    // 适配器
-    protected HeaderFooterAdapter mAdapter;
+    // 閫傞厤鍣?    protected HeaderFooterAdapter mAdapter;
     protected RecyclerView mRecyclerView;
 
-    private ArrayMap<String, String> mPostTypes = new ArrayMap<>();    // 请求类型
-    // 请求状态
-    public static final String POST_DETAIL_CONTENT = "content";
+    private ArrayMap<String, String> mPostTypes = new ArrayMap<>();    // 璇锋眰绫诲瀷
+    // 璇锋眰鐘舵€?    public static final String POST_DETAIL_CONTENT = "content";
     public static final String POST_DETAIL_RELATED = "related";
     public static final String POST_DETAIL_RECOMMEND = "recommend";
 
@@ -77,8 +75,7 @@ public class NewsDetailActivity extends BaseActivity implements AppBarLayout.OnO
     private CollapsingToolbarLayout detailTitle;
     private WebView wvDetailContent;
 
-    //文字左右对齐；文字间隔
-    private static final String WEBVIEW_CONTENT = "<html><head></head><body style=\"text-align:justify;margin:0;letter-spacing:1.2;\">%s</body></html>";
+    //鏂囧瓧宸﹀彸瀵归綈锛涙枃瀛楅棿闅?    private static final String WEBVIEW_CONTENT = "<html><head></head><body style=\"text-align:justify;margin:0;letter-spacing:1.2;\">%s</body></html>";
 
     @Override
     protected int getLayoutId() {
@@ -94,13 +91,11 @@ public class NewsDetailActivity extends BaseActivity implements AppBarLayout.OnO
         tvZebian = findViewById(R.id.tv_detail_zebian);
 
         wvDetailContent = findViewById(R.id.wv_detail_content);
-        WebSettings webSettings = wvDetailContent.getSettings();//获取webview设置属性
-        webSettings.setJavaScriptEnabled(true);
+        WebSettings webSettings = wvDetailContent.getSettings();//鑾峰彇webview璁剧疆灞炴€?        webSettings.setJavaScriptEnabled(true);
         webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         wvDetailContent.setHorizontalScrollBarEnabled(false);
         wvDetailContent.setVerticalScrollBarEnabled(false);
-        wvDetailContent.setBackgroundColor(0x00000000); // 设置背景色
-        wvDetailContent.getSettings().setDefaultFontSize(16);
+        wvDetailContent.setBackgroundColor(0x00000000); // 璁剧疆鑳屾櫙鑹?        wvDetailContent.getSettings().setDefaultFontSize(16);
         wvDetailContent.setWebViewClient(new MyWebViewClient());
 
         detailTitle = findViewById(R.id.detail_title);
@@ -146,7 +141,7 @@ public class NewsDetailActivity extends BaseActivity implements AppBarLayout.OnO
 //        }
     }
 
-    //此方法获取里面的img，设置img的高度100%,固定图片不能左右滑动
+    //姝ゆ柟娉曡幏鍙栭噷闈㈢殑img锛岃缃甶mg鐨勯珮搴?00%,鍥哄畾鍥剧墖涓嶈兘宸﹀彸婊戝姩
     private void imgReset() {
         wvDetailContent.loadUrl("javascript:(function(){" +
                 "var objs = document.getElementsByTagName('img'); " +
@@ -189,7 +184,7 @@ public class NewsDetailActivity extends BaseActivity implements AppBarLayout.OnO
         if (event.isOk()) {
             if (event instanceof GetNewsDetailContentEvent) {
                 GetNewsDetailContentEvent ev = (GetNewsDetailContentEvent) event;
-                List<NewestItem> list = ev.getBean().newest.item;//detail详情只有一个item,故list的size为1
+                List<NewestItem> list = ev.getBean().newest.item;//detail璇︽儏鍙湁涓€涓猧tem,鏁卨ist鐨剆ize涓?
                 if (list != null && list.size() > 0) {
                     setDetaiContentToView(list.get(0));
                 }
@@ -209,7 +204,7 @@ public class NewsDetailActivity extends BaseActivity implements AppBarLayout.OnO
                         }
                         JSONObject jo = jsonArray.optJSONObject(i);
                         DetailRelatedItem item = new DetailRelatedItem();
-                        item.category = "相关文章";
+                        item.category = "鐩稿叧鏂囩珷";
                         item.newsid = jo.optString("newsid");
                         item.newstitle = jo.optString("newstitle");
                         item.postdate = jo.optString("postdate");
@@ -224,7 +219,7 @@ public class NewsDetailActivity extends BaseActivity implements AppBarLayout.OnO
                 GetNewsDetailRecommendEvent ev = (GetNewsDetailRecommendEvent) event;
                 List<DetailRecommendItem> list = ev.getBean().content;
                 for (DetailRecommendItem item : list) {
-                    item.category = "大家都在看";
+                    item.category = "澶у閮藉湪鐪?;
                 }
                 mAdapter.addDatas(list);
             }
@@ -243,7 +238,7 @@ public class NewsDetailActivity extends BaseActivity implements AppBarLayout.OnO
         }
 
         if (!TextUtils.isEmpty(item.detail)) {
-            String replace = item.detail.replace("<a", "<a style=\"color:#D22222\"");//超链接改为红色，方法比较low
+            String replace = item.detail.replace("<a", "<a style=\"color:#D22222\"");//瓒呴摼鎺ユ敼涓虹孩鑹诧紝鏂规硶姣旇緝low
             String content = String.format(WEBVIEW_CONTENT, replace);
             wvDetailContent.loadDataWithBaseURL(null, content, "text/html", "utf-8", null);
         }
@@ -257,7 +252,7 @@ public class NewsDetailActivity extends BaseActivity implements AppBarLayout.OnO
             tvAuthor.setText(stringBuilder.toString());
         }
         if (!TextUtils.isEmpty(item.z)) {
-            tvZebian.setText("责编:" + item.z);
+            tvZebian.setText("璐ｇ紪:" + item.z);
         }
 
     }
@@ -300,8 +295,7 @@ public class NewsDetailActivity extends BaseActivity implements AppBarLayout.OnO
         c.startActivity(intent);
     }
 
-    //解决菜单icon不显示
-    @Override
+    //瑙ｅ喅鑿滃崟icon涓嶆樉绀?    @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         if (menu != null) {
             if (menu.getClass() == MenuBuilder.class) {
@@ -328,3 +322,4 @@ public class NewsDetailActivity extends BaseActivity implements AppBarLayout.OnO
         return super.onOptionsItemSelected(item);
     }
 }
+

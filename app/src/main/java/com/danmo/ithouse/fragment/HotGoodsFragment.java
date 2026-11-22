@@ -1,11 +1,11 @@
-package com.danmo.ithouse.fragment;
+﻿package com.danmo.ithouse.fragment;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
+import com.google.android.material.tabs.TabLayout;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 辣品
+ * 杈ｅ搧
  */
 
 public class HotGoodsFragment extends BaseFragment {
@@ -40,7 +40,7 @@ public class HotGoodsFragment extends BaseFragment {
         mTabNav = holder.get(R.id.tab_nav);
         mBaseViewPager = holder.get(R.id.viewpager);
         Toolbar toolbar = holder.get(R.id.toolbar);
-        toolbar.setTitle("辣品");
+        toolbar.setTitle("杈ｅ搧");
         setHasOptionsMenu(true);
         ((AppCompatActivity) mContext).setSupportActionBar(toolbar);
 
@@ -85,3 +85,4 @@ public class HotGoodsFragment extends BaseFragment {
         return list;
     }
 }
+

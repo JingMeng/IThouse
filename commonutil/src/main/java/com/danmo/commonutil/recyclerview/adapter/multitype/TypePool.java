@@ -22,7 +22,7 @@
 
 package com.danmo.commonutil.recyclerview.adapter.multitype;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import java.util.List;
 

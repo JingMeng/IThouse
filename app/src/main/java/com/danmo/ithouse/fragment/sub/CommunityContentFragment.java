@@ -1,8 +1,8 @@
-package com.danmo.ithouse.fragment.sub;
+﻿package com.danmo.ithouse.fragment.sub;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.danmo.commonapi.CommonApi;
 import com.danmo.commonapi.base.Constant;
@@ -21,8 +21,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.List;
 
 /**
- * 圈子的内容填充页面
- */
+ * 鍦堝瓙鐨勫唴瀹瑰～鍏呴〉闈? */
 
 public class CommunityContentFragment extends RefreshRecyclerFragment<List<CommunityListItem>, GetCommunityListEvent> {
 
@@ -77,7 +76,7 @@ public class CommunityContentFragment extends RefreshRecyclerFragment<List<Commu
     @Override
     protected void onLoadHeader(GetCommunityListEvent event, HeaderFooterAdapter adapter) {
         if (event.getBean() != null && event.getBean().size() > 0) {
-            mAdapter.registerHeader(event.getBean(), new CommunityCategoryProvider(mContext));//添加分类
+            mAdapter.registerHeader(event.getBean(), new CommunityCategoryProvider(mContext));//娣诲姞鍒嗙被
         }
     }
 
@@ -89,9 +88,9 @@ public class CommunityContentFragment extends RefreshRecyclerFragment<List<Commu
     @Override
     protected void onError(GetCommunityListEvent event, String postType) {
         if (postType.equals(POST_LOAD_MORE)) {
-            toast("加载更多失败");
+            toast("鍔犺浇鏇村澶辫触");
         } else if (postType.equals(POST_REFRESH)) {
-            toast("刷新数据失败");
+            toast("鍒锋柊鏁版嵁澶辫触");
         }
     }
 
@@ -110,3 +109,4 @@ public class CommunityContentFragment extends RefreshRecyclerFragment<List<Commu
     }
 
 }
+

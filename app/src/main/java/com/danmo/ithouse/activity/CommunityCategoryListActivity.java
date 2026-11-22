@@ -1,12 +1,12 @@
-package com.danmo.ithouse.activity;
+﻿package com.danmo.ithouse.activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
@@ -57,7 +57,7 @@ public class CommunityCategoryListActivity extends BaseActivity {
         mFloatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(CommunityCategoryListActivity.this, "功能待开发", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CommunityCategoryListActivity.this, "鍔熻兘寰呭紑鍙?, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -101,11 +101,11 @@ public class CommunityCategoryListActivity extends BaseActivity {
 
         Bundle bundle = new Bundle();
         List<BaseViewPagerAdapter.PagerInfo> list = new ArrayList<>();
-        list.add(new BaseViewPagerAdapter.PagerInfo("最新回复", NewestReplyFragment.class,
+        list.add(new BaseViewPagerAdapter.PagerInfo("鏈€鏂板洖澶?, NewestReplyFragment.class,
                 bundle));
-        list.add(new BaseViewPagerAdapter.PagerInfo("热帖", HotPostFragment.class,
+        list.add(new BaseViewPagerAdapter.PagerInfo("鐑笘", HotPostFragment.class,
                 bundle));
-        list.add(new BaseViewPagerAdapter.PagerInfo("最新发表", NewestReportFragment.class,
+        list.add(new BaseViewPagerAdapter.PagerInfo("鏈€鏂板彂琛?, NewestReportFragment.class,
                 bundle));
         return list;
 
@@ -113,3 +113,4 @@ public class CommunityCategoryListActivity extends BaseActivity {
 
 
 }
+

@@ -1,13 +1,13 @@
-package com.danmo.ithouse.widget;
+﻿package com.danmo.ithouse.widget;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -97,8 +97,8 @@ public class CustomSearchView extends LinearLayout {
         autoLinefeedLayout.setMarkClickListener(new AutoLinefeedLayout.MarkClickListener() {
             @Override
             public void clickMark(int position) {
-                //todo 跳转
-                Toast.makeText(getContext(), "功能待开发", Toast.LENGTH_LONG).show();
+                //todo 璺宠浆
+                Toast.makeText(getContext(), "鍔熻兘寰呭紑鍙?, Toast.LENGTH_LONG).show();
             }
         });
         recyclerViewReadHistory = mRootView.findViewById(R.id.recycler_view_read_history);
@@ -109,7 +109,7 @@ public class CustomSearchView extends LinearLayout {
         mRootView.findViewById(R.id.tv_search_more).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "功能待开发", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "鍔熻兘寰呭紑鍙?, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -157,7 +157,7 @@ public class CustomSearchView extends LinearLayout {
                             }
                         });
 
-                        Toast.makeText(getContext(), "功能待开发", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "鍔熻兘寰呭紑鍙?, Toast.LENGTH_LONG).show();
                     }
                     return true;
                 }
@@ -281,3 +281,4 @@ public class CustomSearchView extends LinearLayout {
 
 
 }
+

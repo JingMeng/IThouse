@@ -1,7 +1,7 @@
-package com.danmo.ithouse.provider;
+﻿package com.danmo.ithouse.provider;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.View;
 import android.webkit.WebView;
@@ -51,7 +51,7 @@ public class CommunityCommentHeaderProvider extends BaseViewProvider<CommentHead
         }
 
         TextView tvLouNum = holder.get(R.id.item_comment_lnum);
-        tvLouNum.setText("1楼");
+        tvLouNum.setText("1妤?);
 
         TextView tvTime = holder.get(R.id.item_comment_time);
         tvTime.setText("2017-12-27 02:32:12");
@@ -60,7 +60,7 @@ public class CommunityCommentHeaderProvider extends BaseViewProvider<CommentHead
         tvContent.loadDataWithBaseURL(null, bean.lz_content, "text/html", "utf-8", null);
 
         ImageView ivAvater = holder.get(R.id.item_comment_pic);
-        String url = convertRealPicUrl(bean.commentUid);//解析头像url
+        String url = convertRealPicUrl(bean.commentUid);//瑙ｆ瀽澶村儚url
         Glide.with(mContext)
                 .load(url)
                 .transform(new GlideRoundTransform(mContext, 20))
@@ -71,3 +71,4 @@ public class CommunityCommentHeaderProvider extends BaseViewProvider<CommentHead
 
 
 }
+

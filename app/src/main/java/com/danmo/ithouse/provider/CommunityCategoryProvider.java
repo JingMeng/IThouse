@@ -1,9 +1,9 @@
-package com.danmo.ithouse.provider;
+﻿package com.danmo.ithouse.provider;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 圈子头部分类 数据绑定
+ * 鍦堝瓙澶撮儴鍒嗙被 鏁版嵁缁戝畾
  */
 
 public class CommunityCategoryProvider extends BaseViewProvider<List<CommunityListItem>> {
@@ -42,7 +42,7 @@ public class CommunityCategoryProvider extends BaseViewProvider<List<CommunityLi
 
         CommunityCategoryRecyclerAdapter adapter = new CommunityCategoryRecyclerAdapter(mContext, R.layout.item_community_category_sub_item);
 
-//      bean.remove(0);//原始第一个bean是全部分类，去除
+//      bean.remove(0);//鍘熷绗竴涓猙ean鏄叏閮ㄥ垎绫伙紝鍘婚櫎
         List<CommunityListItem> tmpItemList = new ArrayList<>();
         for (int i = 1; i < bean.size(); i++) {
             tmpItemList.add(bean.get(i));
@@ -100,3 +100,4 @@ public class CommunityCategoryProvider extends BaseViewProvider<List<CommunityLi
 
 
 }
+

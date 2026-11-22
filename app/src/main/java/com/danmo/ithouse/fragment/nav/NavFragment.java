@@ -1,4 +1,4 @@
-package com.danmo.ithouse.fragment.nav;
+﻿package com.danmo.ithouse.fragment.nav;
 
 import android.content.Context;
 import android.graphics.RectF;
@@ -6,9 +6,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.ShapeDrawable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import android.view.View;
 
 import com.danmo.ithouse.R;
@@ -23,8 +23,7 @@ import com.danmo.ithouse.util.Config;
 import java.util.List;
 
 /**
- * 底部导航栏内容
- */
+ * 搴曢儴瀵艰埅鏍忓唴瀹? */
 public class NavFragment extends BaseFragment implements View.OnClickListener {
     private NavigationButton mNavNews;
     private NavigationButton mNavTweet;
@@ -174,3 +173,4 @@ public class NavFragment extends BaseFragment implements View.OnClickListener {
         void onReselect(NavigationButton navigationButton);
     }
 }
+

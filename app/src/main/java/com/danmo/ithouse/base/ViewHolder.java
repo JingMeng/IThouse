@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2017 GcsSloop
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +23,7 @@
 package com.danmo.ithouse.base;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,8 +36,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.danmo.commonutil.log.Logger;
 
 /**
- * 普通view的获取，管理，缓存
- */
+ * 鏅€歷iew鐨勮幏鍙栵紝绠＄悊锛岀紦瀛? */
 public class ViewHolder {
 
     private SparseArray<View> mViews;
@@ -49,16 +48,15 @@ public class ViewHolder {
     }
 
     /**
-     * 通过View的id来获取子View
+     * 閫氳繃View鐨刬d鏉ヨ幏鍙栧瓙View
      *
-     * @param resId view的id
-     * @param <T>   泛型
-     * @return 子View
+     * @param resId view鐨刬d
+     * @param <T>   娉涘瀷
+     * @return 瀛怴iew
      */
     public <T extends View> T get(int resId) {
         View view = mViews.get(resId);
-        //如果该View没有缓存过，则查找View并缓存
-        if (view == null) {
+        //濡傛灉璇iew娌℃湁缂撳瓨杩囷紝鍒欐煡鎵綱iew骞剁紦瀛?        if (view == null) {
             view = mRootView.findViewById(resId);
             mViews.put(resId, view);
         }
@@ -69,20 +67,20 @@ public class ViewHolder {
     }
 
     /**
-     * 获取布局View
+     * 鑾峰彇甯冨眬View
      *
-     * @return 布局View
+     * @return 甯冨眬View
      */
     public View getRootView() {
         return mRootView;
     }
 
     /**
-     * 设置文本
+     * 璁剧疆鏂囨湰
      *
-     * @param res_id view 的 id
-     * @param text   文本内容
-     * @return 是否成功
+     * @param res_id view 鐨?id
+     * @param text   鏂囨湰鍐呭
+     * @return 鏄惁鎴愬姛
      */
     public boolean setText(CharSequence text, @NonNull int res_id) {
         try {
@@ -104,10 +102,8 @@ public class ViewHolder {
     }
 
     /**
-     * 设置监听器
-     *
-     * @param l   监听器
-     * @param ids view 的 id
+     * 璁剧疆鐩戝惉鍣?     *
+     * @param l   鐩戝惉鍣?     * @param ids view 鐨?id
      */
     public void setOnClickListener(View.OnClickListener l, int... ids) {
         if (ids == null) {

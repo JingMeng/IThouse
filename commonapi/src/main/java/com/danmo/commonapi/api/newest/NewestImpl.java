@@ -1,7 +1,7 @@
-package com.danmo.commonapi.api.newest;
+﻿package com.danmo.commonapi.api.newest;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.danmo.commonapi.base.BaseImpl;
 import com.danmo.commonapi.callback.BaseCallback;
@@ -29,3 +29,4 @@ public class NewestImpl extends BaseImpl<NewestService> implements NewestAPI {
         return uuid;
     }
 }
+

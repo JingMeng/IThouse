@@ -1,7 +1,7 @@
-package com.danmo.ithouse.provider;
+﻿package com.danmo.ithouse.provider;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.View;
 import android.webkit.WebView;
@@ -52,7 +52,7 @@ public class CommunityCommentProvider extends BaseViewProvider<CommentReply> {
         }
 
         TextView tvLouNum = holder.get(R.id.item_comment_lnum);
-        tvLouNum.setText(positon + 1 + "楼");
+        tvLouNum.setText(positon + 1 + "妤?);
 
         TextView tvTime = holder.get(R.id.item_comment_time);
         tvTime.setText("2017-12-27 02:32:12");
@@ -67,14 +67,14 @@ public class CommunityCommentProvider extends BaseViewProvider<CommentReply> {
         tvCai.setText(beanReply.A);
 
         ImageView ivAvater = holder.get(R.id.item_comment_pic);
-        String url = convertRealPicUrl(beanReply.Ui);//解析头像url
+        String url = convertRealPicUrl(beanReply.Ui);//瑙ｆ瀽澶村儚url
         Glide.with(mContext)
                 .load(url)
                 .transform(new GlideRoundTransform(mContext, 20))
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
                 .into(ivAvater);
 
-        setFloorComment(holder, bean.R);//设置回复楼层view data.
+        setFloorComment(holder, bean.R);//璁剧疆鍥炲妤煎眰view data.
 
     }
 
@@ -94,3 +94,4 @@ public class CommunityCommentProvider extends BaseViewProvider<CommentReply> {
     }
 
 }
+

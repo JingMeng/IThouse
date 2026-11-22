@@ -1,8 +1,8 @@
-package com.danmo.ithouse.fragment.sub;
+﻿package com.danmo.ithouse.fragment.sub;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.danmo.commonapi.CommonApi;
 import com.danmo.commonapi.base.Constant;
@@ -18,8 +18,7 @@ import com.danmo.ithouse.provider.HotGoodsListProvider;
 import com.danmo.ithouse.provider.HotGoodsRankListProvider;
 
 /**
- * 辣品viewpager的填充首页面：全部
- */
+ * 杈ｅ搧viewpager鐨勫～鍏呴椤甸潰锛氬叏閮? */
 public class HotGoodsAllFragment extends RefreshRecyclerFragment<HotGoodsTopNode, GetHotGoodsListEvent> {
     @Override
     public void initData(HeaderFooterAdapter adapter) {
@@ -71,8 +70,7 @@ public class HotGoodsAllFragment extends RefreshRecyclerFragment<HotGoodsTopNode
     @Override
     protected void onLoadHeader(GetHotGoodsListEvent event, HeaderFooterAdapter adapter) {
         if (event.getBean() != null && event.getBean().content.size() > 0) {
-            mAdapter.registerHeader(event.getBean().content, new HotGoodsBannerProvider(mContext));//添加幻灯片
-        }
+            mAdapter.registerHeader(event.getBean().content, new HotGoodsBannerProvider(mContext));//娣诲姞骞荤伅鐗?        }
     }
 
     @Override
@@ -87,11 +85,12 @@ public class HotGoodsAllFragment extends RefreshRecyclerFragment<HotGoodsTopNode
     @Override
     protected void onError(GetHotGoodsListEvent event, String postType) {
         if (postType.equals(POST_LOAD_MORE)) {
-            toast("加载更多失败");
+            toast("鍔犺浇鏇村澶辫触");
         } else if (postType.equals(POST_REFRESH)) {
-            toast("刷新数据失败");
+            toast("鍒锋柊鏁版嵁澶辫触");
         }
     }
 
 
 }
+

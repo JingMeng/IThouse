@@ -1,9 +1,9 @@
-package com.danmo.ithouse.fragment;
+﻿package com.danmo.ithouse.fragment;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -14,7 +14,7 @@ import com.danmo.ithouse.base.ViewHolder;
 import com.danmo.ithouse.fragment.sub.CommunityContentFragment;
 
 /**
- * 圈子
+ * 鍦堝瓙
  */
 
 public class CommunityFragment extends BaseFragment {
@@ -28,7 +28,7 @@ public class CommunityFragment extends BaseFragment {
     @Override
     protected void initViews(ViewHolder holder, View root) {
         Toolbar toolbar = holder.get(R.id.toolbar);
-        toolbar.setTitle("圈子");
+        toolbar.setTitle("鍦堝瓙");
         setHasOptionsMenu(true);
         ((AppCompatActivity) mContext).setSupportActionBar(toolbar);
 
@@ -48,3 +48,4 @@ public class CommunityFragment extends BaseFragment {
 
 
 }
+

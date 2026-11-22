@@ -1,7 +1,7 @@
-package com.danmo.ithouse.provider;
+﻿package com.danmo.ithouse.provider;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,7 +21,7 @@ import java.util.Map;
 import static com.danmo.commonapi.base.Constant.convertRealPicUrl;
 
 /**
- * 圈子列表数据绑定
+ * 鍦堝瓙鍒楄〃鏁版嵁缁戝畾
  */
 
 public class CommunityListProvider extends BaseViewProvider<CommunityListItem> {
@@ -36,7 +36,7 @@ public class CommunityListProvider extends BaseViewProvider<CommunityListItem> {
         final int position = holder.getLayoutPosition();
 
         ImageView ivAvatar = holder.get(R.id.community_item_avatar);
-        String url = convertRealPicUrl(item.uid);//解析头像url
+        String url = convertRealPicUrl(item.uid);//瑙ｆ瀽澶村儚url
         Glide.with(mContext)
                 .load(url)
                 .transform(new GlideRoundTransform(mContext, 20))
@@ -78,3 +78,4 @@ public class CommunityListProvider extends BaseViewProvider<CommunityListItem> {
     }
 
 }
+

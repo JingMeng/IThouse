@@ -1,7 +1,7 @@
-package com.danmo.ithouse.provider;
+﻿package com.danmo.ithouse.provider;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.danmo.commonapi.base.Constant;
 import com.danmo.commonapi.bean.hotgoods.HotGoodsItem;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 辣品banner 数据绑定
+ * 杈ｅ搧banner 鏁版嵁缁戝畾
  */
 
 public class HotGoodsBannerProvider extends BaseViewProvider<List<HotGoodsItem>> {
@@ -37,15 +37,13 @@ public class HotGoodsBannerProvider extends BaseViewProvider<List<HotGoodsItem>>
             images.add(Constant.LAPIN_PIC_URL + item.Picture);
         }
         Banner banner = (Banner) holder.get(R.id.banner);
-        //设置banner样式
+        //璁剧疆banner鏍峰紡
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
         banner.setIndicatorGravity(BannerConfig.RIGHT);
-        //设置图片加载器
-        banner.setImageLoader(new GlideImageLoader());
-        //设置图片集合
+        //璁剧疆鍥剧墖鍔犺浇鍣?        banner.setImageLoader(new GlideImageLoader());
+        //璁剧疆鍥剧墖闆嗗悎
         banner.setImages(images);
-        //banner设置方法全部调用完毕时最后调用
-        banner.setDelayTime(4 * 1000);
+        //banner璁剧疆鏂规硶鍏ㄩ儴璋冪敤瀹屾瘯鏃舵渶鍚庤皟鐢?        banner.setDelayTime(4 * 1000);
         banner.start();
         banner.setOnBannerListener(new OnBannerListener() {
             @Override
@@ -61,3 +59,4 @@ public class HotGoodsBannerProvider extends BaseViewProvider<List<HotGoodsItem>>
 
     }
 }
+

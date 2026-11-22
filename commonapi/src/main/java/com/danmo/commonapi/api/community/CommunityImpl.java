@@ -1,7 +1,7 @@
-package com.danmo.commonapi.api.community;
+﻿package com.danmo.commonapi.api.community;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.danmo.commonapi.base.BaseImpl;
 import com.danmo.commonapi.callback.BaseCallback;
@@ -50,3 +50,4 @@ public class CommunityImpl extends BaseImpl<CommunityService> implements Communi
         return uuid;
     }
 }
+

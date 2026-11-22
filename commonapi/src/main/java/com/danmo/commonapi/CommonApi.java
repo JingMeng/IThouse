@@ -1,7 +1,7 @@
-package com.danmo.commonapi;
+﻿package com.danmo.commonapi;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.danmo.commonapi.api.community.CommunityApi;
 import com.danmo.commonapi.api.community.CommunityImpl;
@@ -26,7 +26,7 @@ public class CommonApi implements NewestAPI, NewsDetailAPI, HotGoodsApi, Communi
     private static HotGoodsApi sHotGoodsApi;
     private static CommunityApi sCommunityApi;
 
-    //--- 单例 -----------------------------------------------------------------------------------
+    //--- 鍗曚緥 -----------------------------------------------------------------------------------
     private volatile static CommonApi mCommonApi;
 
     private CommonApi() {
@@ -43,11 +43,11 @@ public class CommonApi implements NewestAPI, NewsDetailAPI, HotGoodsApi, Communi
         return mCommonApi;
     }
 
-    //--- 初始化 ---------------------------------------------------------------------------------
+    //--- 鍒濆鍖?---------------------------------------------------------------------------------
     public static CommonApi init(@NonNull Context context, @NonNull final String client_id,
                                  @NonNull final String client_secret) {
         initLogger(context);
-        Logger.i("初始化IThouse");
+        Logger.i("鍒濆鍖朓Thouse");
 
         OAuth.client_id = client_id;
         OAuth.client_secret = client_secret;
@@ -58,7 +58,7 @@ public class CommonApi implements NewestAPI, NewsDetailAPI, HotGoodsApi, Communi
     }
 
     private static void initLogger(@NonNull Context context) {
-        // 在 debug 模式输出日志， release 模式自动移除
+        // 鍦?debug 妯″紡杈撳嚭鏃ュ織锛?release 妯″紡鑷姩绉婚櫎
         if (DebugUtil.isInDebug(context)) {
             Logger.init("IThouse").setLevel(Config.LEVEL_FULL);
         } else {
@@ -68,7 +68,7 @@ public class CommonApi implements NewestAPI, NewsDetailAPI, HotGoodsApi, Communi
 
     private static void initImplement(Context context) {
         mContext = context;
-        Logger.i("初始化 implement");
+        Logger.i("鍒濆鍖?implement");
         try {
             sNewestImpl = new NewestImpl(context, Constant.BASE_URL_NEWS, Constant.PARSE_XML);
             sNewsDetailAPI = new NewsDetailImpl(context, Constant.BASE_URL_NEWS, Constant.PARSE_XML);
@@ -77,7 +77,7 @@ public class CommonApi implements NewestAPI, NewsDetailAPI, HotGoodsApi, Communi
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Logger.i("初始化 implement 结束");
+        Logger.i("鍒濆鍖?implement 缁撴潫");
     }
 
     @Override
@@ -148,3 +148,4 @@ public class CommonApi implements NewestAPI, NewsDetailAPI, HotGoodsApi, Communi
         return sCommunityApi.getCommunityComment(id);
     }
 }
+

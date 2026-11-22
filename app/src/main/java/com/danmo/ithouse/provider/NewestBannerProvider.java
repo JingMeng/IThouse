@@ -1,7 +1,7 @@
-package com.danmo.ithouse.provider;
+﻿package com.danmo.ithouse.provider;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.danmo.commonapi.bean.newest.Newest;
 import com.danmo.commonutil.UrlUtil;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 资讯banner数据绑定
+ * 璧勮banner鏁版嵁缁戝畾
  */
 
 public class NewestBannerProvider extends BaseViewProvider<Newest> {
@@ -37,16 +37,14 @@ public class NewestBannerProvider extends BaseViewProvider<Newest> {
             images.add(bean.item.get(i).image);
         }
         Banner banner = (Banner) holder.get(R.id.banner);
-        //设置banner样式
+        //璁剧疆banner鏍峰紡
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
-        //设置标题集合（当banner样式有显示title时）
+        //璁剧疆鏍囬闆嗗悎锛堝綋banner鏍峰紡鏈夋樉绀簍itle鏃讹級
         banner.setBannerTitles(titles);
-        //设置图片加载器
-        banner.setImageLoader(new GlideImageLoader());
-        //设置图片集合
+        //璁剧疆鍥剧墖鍔犺浇鍣?        banner.setImageLoader(new GlideImageLoader());
+        //璁剧疆鍥剧墖闆嗗悎
         banner.setImages(images);
-        //banner设置方法全部调用完毕时最后调用
-        banner.setDelayTime(4 * 1000);
+        //banner璁剧疆鏂规硶鍏ㄩ儴璋冪敤瀹屾瘯鏃舵渶鍚庤皟鐢?        banner.setDelayTime(4 * 1000);
         banner.start();
         banner.setOnBannerListener(new OnBannerListener() {
             @Override
@@ -64,3 +62,4 @@ public class NewestBannerProvider extends BaseViewProvider<Newest> {
 
     }
 }
+

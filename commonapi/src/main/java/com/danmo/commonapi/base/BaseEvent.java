@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2017 GcsSloop
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,41 +22,30 @@
 
 package com.danmo.commonapi.base;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 /**
- * 所有 Event 的基类
- * <p>
- * T 为对应的实体类
- * <p>
+ * 鎵€鏈?Event 鐨勫熀绫? * <p>
+ * T 涓哄搴旂殑瀹炰綋绫? * <p>
  * HTTP Status
- * -1 - 可能是网络未连接
- * 200, 201 - 请求成功，或执行成功
- * 400 - 参数不符合 API 的要求、或者数据格式验证没有通过，请配合 Response Body 里面的 error 信息确定问题。
- * 401 - 用户认证失败，或缺少认证信息，比如 access_token 过期，或没传，可以尝试用 refresh_token 方式获得新的 access_token。
- * 403 - 当前用户对资源没有操作权限
- * 404 - 资源不存在。
- * 500 - 服务器异常
- */
+ * -1 - 鍙兘鏄綉缁滄湭杩炴帴
+ * 200, 201 - 璇锋眰鎴愬姛锛屾垨鎵ц鎴愬姛
+ * 400 - 鍙傛暟涓嶇鍚?API 鐨勮姹傘€佹垨鑰呮暟鎹牸寮忛獙璇佹病鏈夐€氳繃锛岃閰嶅悎 Response Body 閲岄潰鐨?error 淇℃伅纭畾闂銆? * 401 - 鐢ㄦ埛璁よ瘉澶辫触锛屾垨缂哄皯璁よ瘉淇℃伅锛屾瘮濡?access_token 杩囨湡锛屾垨娌′紶锛屽彲浠ュ皾璇曠敤 refresh_token 鏂瑰紡鑾峰緱鏂扮殑 access_token銆? * 403 - 褰撳墠鐢ㄦ埛瀵硅祫婧愭病鏈夋搷浣滄潈闄? * 404 - 璧勬簮涓嶅瓨鍦ㄣ€? * 500 - 鏈嶅姟鍣ㄥ紓甯? */
 public class BaseEvent<T> {
-    protected String uuid = "";         // 通用唯一识别码 (Universally Unique Identifier)
-    protected boolean ok = false;       // 是否获取实体数据(T)成功
-    protected Integer code = -1;        // 状态码
-    protected T t;                      // 实体类
-
+    protected String uuid = "";         // 閫氱敤鍞竴璇嗗埆鐮?(Universally Unique Identifier)
+    protected boolean ok = false;       // 鏄惁鑾峰彇瀹炰綋鏁版嵁(T)鎴愬姛
+    protected Integer code = -1;        // 鐘舵€佺爜
+    protected T t;                      // 瀹炰綋绫?
     /**
-     * @param uuid 唯一识别码
-     */
+     * @param uuid 鍞竴璇嗗埆鐮?     */
     public BaseEvent(@Nullable String uuid) {
         this.ok = false;
         this.uuid = uuid;
     }
 
     /**
-     * @param uuid 唯一识别码
-     * @param code 网络返回码
-     * @param t    实体数据
+     * @param uuid 鍞竴璇嗗埆鐮?     * @param code 缃戠粶杩斿洖鐮?     * @param t    瀹炰綋鏁版嵁
      */
     public BaseEvent(@Nullable String uuid, @NonNull Integer code, @Nullable T t) {
         this.ok = null != t;
@@ -66,8 +55,7 @@ public class BaseEvent<T> {
     }
 
     /**
-     * @param code 网络返回码
-     * @param t    实体数据
+     * @param code 缃戠粶杩斿洖鐮?     * @param t    瀹炰綋鏁版嵁
      */
     public BaseEvent setEvent(@NonNull Integer code, @Nullable T t) {
         this.ok = null != t;
@@ -77,8 +65,7 @@ public class BaseEvent<T> {
     }
 
     /**
-     * 判断是否获取实体类成功
-     *
+     * 鍒ゆ柇鏄惁鑾峰彇瀹炰綋绫绘垚鍔?     *
      * @return ok
      */
     public boolean isOk() {
@@ -86,9 +73,8 @@ public class BaseEvent<T> {
     }
 
     /**
-     * 获取实体类
-     *
-     * @return 实体类数据(可能为null)
+     * 鑾峰彇瀹炰綋绫?     *
+     * @return 瀹炰綋绫绘暟鎹?鍙兘涓簄ull)
      */
     public T getBean() {
         return t;
@@ -96,7 +82,7 @@ public class BaseEvent<T> {
 
 
     /**
-     * 获取当前 Event 的 uuid
+     * 鑾峰彇褰撳墠 Event 鐨?uuid
      *
      * @return uuid
      */
@@ -105,40 +91,39 @@ public class BaseEvent<T> {
     }
 
     /**
-     * 判断状态
-     *
-     * @return 状态吗
+     * 鍒ゆ柇鐘舵€?     *
+     * @return 鐘舵€佸悧
      */
     public Integer getCode() {
         return code;
     }
 
     /**
-     * 获取返回码详情
-     *
-     * @return 描述信息
+     * 鑾峰彇杩斿洖鐮佽鎯?     *
+     * @return 鎻忚堪淇℃伅
      */
     public String getCodeDescribe() {
         switch (code) {
             case -1:
-                return "可能是网络未连接，或者数据转化失败";
+                return "鍙兘鏄綉缁滄湭杩炴帴锛屾垨鑰呮暟鎹浆鍖栧け璐?;
             case 200:
             case 201:
-                return "请求成功，或执行成功。";
+                return "璇锋眰鎴愬姛锛屾垨鎵ц鎴愬姛銆?;
             case 400:
-                return "参数不符合 API 的要求、或者数据格式验证没有通过";
+                return "鍙傛暟涓嶇鍚?API 鐨勮姹傘€佹垨鑰呮暟鎹牸寮忛獙璇佹病鏈夐€氳繃";
             case 401:
-                return "用户认证失败，或缺少认证信息，比如 access_token 过期，或没传，可以尝试用 refresh_token 方式获得新的 access_token";
+                return "鐢ㄦ埛璁よ瘉澶辫触锛屾垨缂哄皯璁よ瘉淇℃伅锛屾瘮濡?access_token 杩囨湡锛屾垨娌′紶锛屽彲浠ュ皾璇曠敤 refresh_token 鏂瑰紡鑾峰緱鏂扮殑 access_token";
             case 403:
-                return "当前用户对资源没有操作权限";
+                return "褰撳墠鐢ㄦ埛瀵硅祫婧愭病鏈夋搷浣滄潈闄?;
             case 404:
-                return "资源不存在";
+                return "璧勬簮涓嶅瓨鍦?;
             case 500:
-                return "服务器异常";
+                return "鏈嶅姟鍣ㄥ紓甯?;
             case 402:
-                return "用户尚未登录";
+                return "鐢ㄦ埛灏氭湭鐧诲綍";
             default:
-                return "未知异常(" + code + ")";
+                return "鏈煡寮傚父(" + code + ")";
         }
     }
 }
+

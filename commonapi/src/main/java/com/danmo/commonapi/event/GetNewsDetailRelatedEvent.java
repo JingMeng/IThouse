@@ -1,6 +1,6 @@
-package com.danmo.commonapi.event;
+﻿package com.danmo.commonapi.event;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.danmo.commonapi.base.BaseEvent;
 
@@ -10,3 +10,4 @@ public class GetNewsDetailRelatedEvent extends BaseEvent<String> {
         super(uuid);
     }
 }
+

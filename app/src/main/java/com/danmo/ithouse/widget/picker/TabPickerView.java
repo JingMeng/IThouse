@@ -1,11 +1,11 @@
-package com.danmo.ithouse.widget.picker;
+﻿package com.danmo.ithouse.widget.picker;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.support.v4.view.MotionEventCompat;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -30,19 +30,13 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * 自定义分类栏目
- * <p>
- * 动态栏目View 请通过{@link #setTabPickerManager(TabPickerDataManager)}来设置活动数据和原始数据，数据
- * 对象根据需要实现{@link Object#hashCode()}和{@link Object#equals(Object)}方法，因为非活动数据是通过使用
- * {@link List#contains(Object)}方法从原始数据剔除活动数据实现的。
- * <p>
- * <p>活动动态栏目的添加、删除、移动、选择通过{@link OnTabPickingListener}来实现的，你可以通过方法
- * {@link #setOnTabPickingListener(OnTabPickingListener)}来监听。
- * <p>
- * <p>通过{@link #show(int)}和{@link #hide()}方法来显示隐藏动态栏目界面。
- * <p>
- * <p>通过{@link #onTurnBack()}响应回退事件。
- * <p>
+ * 鑷畾涔夊垎绫绘爮鐩? * <p>
+ * 鍔ㄦ€佹爮鐩甐iew 璇烽€氳繃{@link #setTabPickerManager(TabPickerDataManager)}鏉ヨ缃椿鍔ㄦ暟鎹拰鍘熷鏁版嵁锛屾暟鎹? * 瀵硅薄鏍规嵁闇€瑕佸疄鐜皗@link Object#hashCode()}鍜寋@link Object#equals(Object)}鏂规硶锛屽洜涓洪潪娲诲姩鏁版嵁鏄€氳繃浣跨敤
+ * {@link List#contains(Object)}鏂规硶浠庡師濮嬫暟鎹墧闄ゆ椿鍔ㄦ暟鎹疄鐜扮殑銆? * <p>
+ * <p>娲诲姩鍔ㄦ€佹爮鐩殑娣诲姞銆佸垹闄ゃ€佺Щ鍔ㄣ€侀€夋嫨閫氳繃{@link OnTabPickingListener}鏉ュ疄鐜扮殑锛屼綘鍙互閫氳繃鏂规硶
+ * {@link #setOnTabPickingListener(OnTabPickingListener)}鏉ョ洃鍚€? * <p>
+ * <p>閫氳繃{@link #show(int)}鍜寋@link #hide()}鏂规硶鏉ユ樉绀洪殣钘忓姩鎬佹爮鐩晫闈€? * <p>
+ * <p>閫氳繃{@link #onTurnBack()}鍝嶅簲鍥為€€浜嬩欢銆? * <p>
  */
 @SuppressWarnings("all")
 public class TabPickerView extends FrameLayout {
@@ -91,14 +85,14 @@ public class TabPickerView extends FrameLayout {
      */
     public interface OnTabPickingListener {
         /**
-         * 单击选择某个tab
+         * 鍗曞嚮閫夋嫨鏌愪釜tab
          *
          * @param position select a tab
          */
         void onSelected(int position);
 
         /**
-         * 删除某个tab
+         * 鍒犻櫎鏌愪釜tab
          *
          * @param position the moved tab's position
          * @param tab      the moved tab
@@ -106,14 +100,14 @@ public class TabPickerView extends FrameLayout {
         void onRemove(int position, SubTab tab);
 
         /**
-         * 添加某个tab
+         * 娣诲姞鏌愪釜tab
          *
          * @param tab the inserted tab
          */
         void onInsert(SubTab tab);
 
         /**
-         * 交换tab
+         * 浜ゆ崲tab
          *
          * @param op      the mover's position
          * @param mover   the moving tab
@@ -123,7 +117,7 @@ public class TabPickerView extends FrameLayout {
         void onMove(int op, int np);
 
         /**
-         * 重新持久化活动的tabs
+         * 閲嶆柊鎸佷箙鍖栨椿鍔ㄧ殑tabs
          *
          * @param activeTabs the actived tabs
          */
@@ -246,8 +240,7 @@ public class TabPickerView extends FrameLayout {
         mActiveAdapter.setOnClickItemListener(new Action1<Integer>() {
             @Override
             public void call(Integer position) {
-                // 先调用隐藏, 因为隐藏有保存,更新tab的动作
-                int tempIndex = mSelectedIndex;
+                // 鍏堣皟鐢ㄩ殣钘? 鍥犱负闅愯棌鏈変繚瀛?鏇存柊tab鐨勫姩浣?                int tempIndex = mSelectedIndex;
                 mSelectedIndex = position;
                 mActiveAdapter.notifyItemChanged(tempIndex);
                 mActiveAdapter.notifyItemChanged(mSelectedIndex);
@@ -310,7 +303,7 @@ public class TabPickerView extends FrameLayout {
         mInactiveAdapter.setOnClickItemListener(new Action1<Integer>() {
             @Override
             public void call(Integer position) {
-                // fix double click会out of array
+                // fix double click浼歰ut of array
                 if (position < 0 || position >= mInactiveAdapter.getItemCount()) return;
                 SubTab tab = mInactiveAdapter.removeItem(position);
                 mActiveAdapter.addItem(tab);
@@ -394,13 +387,13 @@ public class TabPickerView extends FrameLayout {
         }
 
         void startEditMode() {
-            mViewOperator.setText("拖动排序，返回键取消");
+            mViewOperator.setText("鎷栧姩鎺掑簭锛岃繑鍥為敭鍙栨秷");
             isEditMode = true;
             notifyDataSetChanged();
         }
 
         void cancelEditMode() {
-            mViewOperator.setText("长按切换栏目");
+            mViewOperator.setText("闀挎寜鍒囨崲鏍忕洰");
             isEditMode = false;
             notifyDataSetChanged();
         }
@@ -567,8 +560,8 @@ public class TabPickerView extends FrameLayout {
                 if (isEditMode()) return;
                 final int position = viewHolder.getAdapterPosition();
 
-                // onBindViewHolder之后，ViewHolder.itemView.getParent() != RecycleView
-                // 估计是在onBindViewHolder之后绑定了ViewParent的，延迟500，暂时没什么好办法
+                // onBindViewHolder涔嬪悗锛孷iewHolder.itemView.getParent() != RecycleView
+                // 浼拌鏄湪onBindViewHolder涔嬪悗缁戝畾浜哣iewParent鐨勶紝寤惰繜500锛屾殏鏃舵病浠€涔堝ソ鍔炴硶
                 registerBindViewObserver(new Action1<ViewHolder>() {
                     @Override
                     public void call(final ViewHolder viewHolder) {
@@ -626,15 +619,14 @@ public class TabPickerView extends FrameLayout {
                 restoreActiveDataSet(mActiveDataSet);
             } else if (isUpdate(BaseApplication.sAppContext)) {
                 List<SubTab> mActiveList = new ArrayList<>();
-                // 替换老列表项
+                // 鏇挎崲鑰佸垪琛ㄩ」
                 for (SubTab item : mActiveDataSet) {
                     int position = mOriginalDataSet.indexOf(item);
                     if (position == -1) continue;
                     mActiveList.add(mOriginalDataSet.get(position));
                 }
 
-                // 将未加入的新项加入活动列表
-                for (SubTab item : mOriginalDataSet) {
+                // 灏嗘湭鍔犲叆鐨勬柊椤瑰姞鍏ユ椿鍔ㄥ垪琛?                for (SubTab item : mOriginalDataSet) {
                     if (item.isActived() && !mActiveList.contains(item)) {
                         mActiveList.add(item);
                     }
@@ -688,3 +680,4 @@ public class TabPickerView extends FrameLayout {
     }
 
 }
+

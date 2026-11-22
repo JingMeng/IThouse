@@ -1,8 +1,8 @@
-package com.danmo.ithouse.fragment.sub.category;
+﻿package com.danmo.ithouse.fragment.sub.category;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.danmo.commonapi.CommonApi;
 import com.danmo.commonapi.bean.community.CommunityListItem;
@@ -84,9 +84,10 @@ public class NewestReplyFragment extends RefreshRecyclerFragment<List<CommunityL
     @Override
     protected void onError(GetCommunityListEvent event, String postType) {
         if (postType.equals(POST_LOAD_MORE)) {
-            toast("加载更多失败");
+            toast("鍔犺浇鏇村澶辫触");
         } else if (postType.equals(POST_REFRESH)) {
-            toast("刷新数据失败");
+            toast("鍒锋柊鏁版嵁澶辫触");
         }
     }
 }
+

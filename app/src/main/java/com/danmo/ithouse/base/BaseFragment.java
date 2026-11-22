@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2017 GcsSloop
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,18 +24,17 @@ package com.danmo.ithouse.base;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 /**
- * 提供基础内容和生命周期控制
- */
+ * 鎻愪緵鍩虹鍐呭鍜岀敓鍛藉懆鏈熸帶鍒? */
 public abstract class BaseFragment extends Fragment {
     private static final String STATE_SAVE_IS_HIDDEN = "STATE_SAVE_IS_HIDDEN";
     protected Context mContext;
@@ -133,3 +132,4 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 }
+

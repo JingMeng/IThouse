@@ -1,8 +1,8 @@
-package com.danmo.ithouse.activity;
+﻿package com.danmo.ithouse.activity;
 
 import android.animation.ValueAnimator;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import android.view.View;
 
 import com.danmo.ithouse.R;
@@ -18,7 +18,7 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 /**
- * 带底部导航的主Activity
+ * 甯﹀簳閮ㄥ鑸殑涓籄ctivity
  */
 public class MainActivity extends BaseActivity implements NavFragment.OnNavigationReselectListener {
 
@@ -111,3 +111,4 @@ public class MainActivity extends BaseActivity implements NavFragment.OnNavigati
     }
 
 }
+

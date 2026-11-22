@@ -1,6 +1,6 @@
-package com.danmo.commonapi.event;
+﻿package com.danmo.commonapi.event;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 
 public class GetNewestBannerEvent extends GetNewestEvent {
@@ -8,3 +8,4 @@ public class GetNewestBannerEvent extends GetNewestEvent {
         super(uuid);
     }
 }
+

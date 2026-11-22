@@ -1,10 +1,10 @@
-package com.danmo.ithouse.provider;
+﻿package com.danmo.ithouse.provider;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,8 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 辣品中间排行榜数据绑定
- */
+ * 杈ｅ搧涓棿鎺掕姒滄暟鎹粦瀹? */
 
 public class HotGoodsRankListProvider extends BaseViewProvider<RankBeanTmp> {
 
@@ -104,3 +103,4 @@ public class HotGoodsRankListProvider extends BaseViewProvider<RankBeanTmp> {
     }
 
 }
+

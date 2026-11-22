@@ -1,7 +1,7 @@
-package com.danmo.ithouse.provider;
+﻿package com.danmo.ithouse.provider;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -13,7 +13,7 @@ import com.danmo.commonutil.recyclerview.adapter.multitype.BaseViewProvider;
 import com.danmo.ithouse.R;
 
 /**
- * 内容详情页 大家都在买 数据绑定
+ * 鍐呭璇︽儏椤?澶у閮藉湪涔?鏁版嵁缁戝畾
  */
 
 public class RecommentActicalProvider extends BaseViewProvider<DetailRecommendItem> {
@@ -43,3 +43,4 @@ public class RecommentActicalProvider extends BaseViewProvider<DetailRecommendIt
 
     }
 }
+

@@ -1,18 +1,18 @@
-package com.danmo.ithouse.base;
+﻿package com.danmo.ithouse.base;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import com.google.android.material.navigation.NavigationView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -61,20 +61,19 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_drawer);
         initDatas();
         initViews();
-        IMMLeaks.fixFocusedViewLeak(this.getApplication()); // 修复 InputMethodManager 引发的内存泄漏
-    }
+        IMMLeaks.fixFocusedViewLeak(this.getApplication()); // 淇 InputMethodManager 寮曞彂鐨勫唴瀛樻硠婕?    }
 
     @LayoutRes
     protected abstract int getLayoutId();
 
     /**
-     * 初始化数据，调用位置在 initViews 之前
+     * 鍒濆鍖栨暟鎹紝璋冪敤浣嶇疆鍦?initViews 涔嬪墠
      */
     protected void initDatas() {
     }
 
     /**
-     * 初始化 View， 调用位置在 initDatas 之后
+     * 鍒濆鍖?View锛?璋冪敤浣嶇疆鍦?initDatas 涔嬪悗
      */
     protected void initViews() {
         flActivityContainer = findViewById(R.id.activity_container);
@@ -84,7 +83,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         mRootView = findViewById(R.id.root_layout);
     }
 
-    // 默认点击左上角是结束当前 Activity
+    // 榛樿鐐瑰嚮宸︿笂瑙掓槸缁撴潫褰撳墠 Activity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -96,18 +95,18 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 发出一个短Toast
+     * 鍙戝嚭涓€涓煭Toast
      *
-     * @param text 内容
+     * @param text 鍐呭
      */
     public void toastShort(String text) {
         toast(text, Toast.LENGTH_SHORT);
     }
 
     /**
-     * 发出一个长toast提醒
+     * 鍙戝嚭涓€涓暱toast鎻愰啋
      *
-     * @param text 内容
+     * @param text 鍐呭
      */
     public void toastLong(String text) {
         toast(text, Toast.LENGTH_LONG);
@@ -131,15 +130,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 打开 Activity 的同时传递一个数据
-     */
+     * 鎵撳紑 Activity 鐨勫悓鏃朵紶閫掍竴涓暟鎹?     */
     protected <V extends Serializable> void openActivity(Class<?> cls, String key, V value) {
         openActivity(this, cls, key, value);
     }
 
     /**
-     * 打开 Activity 的同时传递一个数据
-     */
+     * 鎵撳紑 Activity 鐨勫悓鏃朵紶閫掍竴涓暟鎹?     */
     public <V extends Serializable> void openActivity(Context context, Class<?> cls, String key, V value) {
         Intent intent = new Intent(context, cls);
         intent.putExtra(key, value);
@@ -214,3 +211,4 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 }
+

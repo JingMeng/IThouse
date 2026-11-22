@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2017 GcsSloop
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +23,7 @@
 package com.danmo.ithouse.fragment.refresh;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -33,13 +33,12 @@ import com.danmo.commonutil.recyclerview.adapter.multitype.BaseViewProvider;
 import com.danmo.ithouse.R;
 
 /**
- * 必要的底部刷新footer绑定适配器
- */
+ * 蹇呰鐨勫簳閮ㄥ埛鏂癴ooter缁戝畾閫傞厤鍣? */
 public class FooterProvider extends BaseViewProvider<Footer> {
-    private static final String FOOTER_LOADING = "正在加载中...";
-    private static final String FOOTER_NORMAL = "已加载全部";
-    private static final String FOOTER_ERROR_A = "加载失败";
-    private static final String FOOTER_ERROR_B = "失败，点击重试";
+    private static final String FOOTER_LOADING = "姝ｅ湪鍔犺浇涓?..";
+    private static final String FOOTER_NORMAL = "宸插姞杞藉叏閮?;
+    private static final String FOOTER_ERROR_A = "鍔犺浇澶辫触";
+    private static final String FOOTER_ERROR_B = "澶辫触锛岀偣鍑婚噸璇?;
     private TextView footer;
     private ProgressBar footerloading;
 
@@ -86,3 +85,4 @@ public class FooterProvider extends BaseViewProvider<Footer> {
         footerloading.setVisibility(View.GONE);
     }
 }
+

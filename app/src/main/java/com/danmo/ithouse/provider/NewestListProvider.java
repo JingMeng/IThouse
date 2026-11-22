@@ -1,7 +1,7 @@
-package com.danmo.ithouse.provider;
+﻿package com.danmo.ithouse.provider;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,7 +25,7 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 
 /**
- * 资讯列表数据绑定
+ * 璧勮鍒楄〃鏁版嵁缁戝畾
  */
 
 public class NewestListProvider extends BaseViewProvider<NewestItem> {
@@ -41,7 +41,7 @@ public class NewestListProvider extends BaseViewProvider<NewestItem> {
         holder.setText(R.id.item_title, bean.title);
         holder.setText(R.id.item_commentcount, bean.commentcount + mContext.getString(R.string.comment_text));
 
-        //todo 时间判断待fix
+        //todo 鏃堕棿鍒ゆ柇寰協ix
         try {
             if (TimeUtil.IsToday(bean.postdate)) {
                 String[] ss = bean.postdate.split("\\s+");
@@ -61,7 +61,7 @@ public class NewestListProvider extends BaseViewProvider<NewestItem> {
             e.printStackTrace();
         }
 
-        // 加载头像
+        // 鍔犺浇澶村儚
         ImageView imageView = holder.get(R.id.item_image);
         String url = bean.image;
         Glide.with(mContext).load(url).diskCacheStrategy(DiskCacheStrategy.RESULT).into(imageView);
@@ -92,8 +92,7 @@ public class NewestListProvider extends BaseViewProvider<NewestItem> {
 
                 final NewsHistoryBean newsHistoryBean = new NewsHistoryBean();
                 newsHistoryBean.setImage(bean.image).setNewsid(bean.newsid).setTitle(bean.title).setUrl(bean.url);
-                //存入本地数据库
-                BaseApplication.sRealm.executeTransaction(new Realm.Transaction() {
+                //瀛樺叆鏈湴鏁版嵁搴?                BaseApplication.sRealm.executeTransaction(new Realm.Transaction() {
                     @Override
                     public void execute(Realm realm) {
                         BaseApplication.sRealm.copyToRealmOrUpdate(newsHistoryBean);
@@ -104,3 +103,4 @@ public class NewestListProvider extends BaseViewProvider<NewestItem> {
 
     }
 }
+

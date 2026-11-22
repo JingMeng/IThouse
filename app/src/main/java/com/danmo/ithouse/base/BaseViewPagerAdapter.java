@@ -1,11 +1,11 @@
-package com.danmo.ithouse.base;
+﻿package com.danmo.ithouse.base;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import android.view.ViewGroup;
 
 import java.util.List;
@@ -76,3 +76,4 @@ public class BaseViewPagerAdapter extends FragmentPagerAdapter {
         }
     }
 }
+

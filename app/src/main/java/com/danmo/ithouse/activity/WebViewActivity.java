@@ -1,8 +1,8 @@
-package com.danmo.ithouse.activity;
+﻿package com.danmo.ithouse.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -16,7 +16,7 @@ import com.danmo.ithouse.R;
 import com.danmo.ithouse.base.BaseActivity;
 
 /**
- * 普通详情页，webview类型页面
+ * 鏅€氳鎯呴〉锛寃ebview绫诲瀷椤甸潰
  */
 public class WebViewActivity extends BaseActivity {
     private WebView webView;
@@ -48,31 +48,23 @@ public class WebViewActivity extends BaseActivity {
         });
 
         webView = findViewById(R.id.wv_detail_content);
-        WebSettings webSettings = webView.getSettings();//获取webview设置属性
-        webSettings.setJavaScriptEnabled(true);
+        WebSettings webSettings = webView.getSettings();//鑾峰彇webview璁剧疆灞炴€?        webSettings.setJavaScriptEnabled(true);
         webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-        //设置自适应屏幕，两者合用
-        webSettings.setUseWideViewPort(true); //将图片调整到适合webview的大小
-        webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
+        //璁剧疆鑷€傚簲灞忓箷锛屼袱鑰呭悎鐢?        webSettings.setUseWideViewPort(true); //灏嗗浘鐗囪皟鏁村埌閫傚悎webview鐨勫ぇ灏?        webSettings.setLoadWithOverviewMode(true); // 缂╂斁鑷冲睆骞曠殑澶у皬
 
-        //缩放操作
-        webSettings.setSupportZoom(true); //支持缩放，默认为true。是下面那个的前提。
-        webSettings.setBuiltInZoomControls(true); //设置内置的缩放控件。若为false，则该WebView不可缩放
-        webSettings.setDisplayZoomControls(false); //隐藏原生的缩放控件
+        //缂╂斁鎿嶄綔
+        webSettings.setSupportZoom(true); //鏀寔缂╂斁锛岄粯璁や负true銆傛槸涓嬮潰閭ｄ釜鐨勫墠鎻愩€?        webSettings.setBuiltInZoomControls(true); //璁剧疆鍐呯疆鐨勭缉鏀炬帶浠躲€傝嫢涓篺alse锛屽垯璇ebView涓嶅彲缂╂斁
+        webSettings.setDisplayZoomControls(false); //闅愯棌鍘熺敓鐨勭缉鏀炬帶浠?
+        //鍏朵粬缁嗚妭鎿嶄綔
+        webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK); //鍏抽棴webview涓紦瀛?        webSettings.setAllowFileAccess(true); //璁剧疆鍙互璁块棶鏂囦欢
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //鏀寔閫氳繃JS鎵撳紑鏂扮獥鍙?        webSettings.setLoadsImagesAutomatically(true); //鏀寔鑷姩鍔犺浇鍥剧墖
+        webSettings.setDefaultTextEncodingName("utf-8");//璁剧疆缂栫爜鏍煎紡
 
-        //其他细节操作
-        webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK); //关闭webview中缓存
-        webSettings.setAllowFileAccess(true); //设置可以访问文件
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口
-        webSettings.setLoadsImagesAutomatically(true); //支持自动加载图片
-        webSettings.setDefaultTextEncodingName("utf-8");//设置编码格式
-
-        webView.setBackgroundColor(0x00000000); // 设置背景色
-        //设置Web视图
+        webView.setBackgroundColor(0x00000000); // 璁剧疆鑳屾櫙鑹?        //璁剧疆Web瑙嗗浘
         webView.setWebViewClient(new webViewClient());
     }
 
-    //设置不用系统浏览器打开,直接显示在当前Webview
+    //璁剧疆涓嶇敤绯荤粺娴忚鍣ㄦ墦寮€,鐩存帴鏄剧ず鍦ㄥ綋鍓峎ebview
     private class webViewClient extends WebViewClient {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
 
@@ -87,11 +79,10 @@ public class WebViewActivity extends BaseActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
-            webView.goBack(); //goBack()表示返回WebView的上一页面
+            webView.goBack(); //goBack()琛ㄧず杩斿洖WebView鐨勪笂涓€椤甸潰
 //            return true;
         }
-        finish();//结束退出程序
-        return false;
+        finish();//缁撴潫閫€鍑虹▼搴?        return false;
     }
 
     public static void start(Context context, String link) {
@@ -132,3 +123,4 @@ public class WebViewActivity extends BaseActivity {
         super.onDestroy();
     }
 }
+

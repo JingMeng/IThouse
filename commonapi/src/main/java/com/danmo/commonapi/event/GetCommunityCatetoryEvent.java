@@ -1,6 +1,6 @@
-package com.danmo.commonapi.event;
+﻿package com.danmo.commonapi.event;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 
 public class GetCommunityCatetoryEvent extends GetCommunityListEvent {
@@ -8,3 +8,4 @@ public class GetCommunityCatetoryEvent extends GetCommunityListEvent {
         super(uuid);
     }
 }
+

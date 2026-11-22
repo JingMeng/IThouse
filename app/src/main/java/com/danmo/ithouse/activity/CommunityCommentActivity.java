@@ -1,4 +1,4 @@
-package com.danmo.ithouse.activity;
+﻿package com.danmo.ithouse.activity;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.ShapeDrawable;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -205,7 +205,7 @@ public class CommunityCommentActivity extends BaseActivity implements View.OnCli
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.comment_write:
-                Toast.makeText(this, "功能待开发", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "鍔熻兘寰呭紑鍙?, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.comment_refresh:
                 CommonApi.getSingleInstance().getCommunityComment(mCommentId);
@@ -217,8 +217,9 @@ public class CommunityCommentActivity extends BaseActivity implements View.OnCli
                 mRecyclerView.smoothScrollToPosition(DensityUtil.getSceenHeight(this));
                 break;
             case R.id.comment_share:
-                Toast.makeText(this, "功能待开发", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "鍔熻兘寰呭紑鍙?, Toast.LENGTH_SHORT).show();
                 break;
         }
     }
 }
+

@@ -1,7 +1,7 @@
-package com.danmo.commonapi.api.newsdetail;
+﻿package com.danmo.commonapi.api.newsdetail;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.danmo.commonapi.base.BaseImpl;
 import com.danmo.commonapi.callback.BaseCallback;
@@ -36,3 +36,4 @@ public class NewsDetailImpl extends BaseImpl<NewsDetailService> implements NewsD
         return uuid;
     }
 }
+

@@ -1,11 +1,11 @@
-package com.danmo.ithouse.activity;
+﻿package com.danmo.ithouse.activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.tabs.TabLayout;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
@@ -54,7 +54,7 @@ public class CalendarActivity extends BaseActivity implements CalendarView.OnDat
                 CalendarActivity.this.onBackPressed();
             }
         });
-        mToolbar.setTitle(mCalendarView.getCurYear() + "年" + mCalendarView.getCurMonth() + "月" + mCalendarView.getCurDay() + "日");
+        mToolbar.setTitle(mCalendarView.getCurYear() + "骞? + mCalendarView.getCurMonth() + "鏈? + mCalendarView.getCurDay() + "鏃?);
 
         mCalendarView.setOnYearChangeListener(this);
         mCalendarView.setOnDateSelectedListener(this);
@@ -62,14 +62,14 @@ public class CalendarActivity extends BaseActivity implements CalendarView.OnDat
 //        List<Calendar> schemes = new ArrayList<>();
 //        int year = mCalendarView.getCurYear();
 //        int month = mCalendarView.getCurMonth();
-//        schemes.add(getSchemeCalendar(year, month, 3, 0, "假"));
-//        schemes.add(getSchemeCalendar(year, month, 6, 0, "事"));
-//        schemes.add(getSchemeCalendar(year, month, 9, 0, "议"));
-//        schemes.add(getSchemeCalendar(year, month, 13, 0, "记"));
-//        schemes.add(getSchemeCalendar(year, month, 14, 0, "记"));
-//        schemes.add(getSchemeCalendar(year, month, 15, 0, "假"));
-//        schemes.add(getSchemeCalendar(year, month, 18, 0, "记"));
-//        schemes.add(getSchemeCalendar(year, month, 25, 0, "假"));
+//        schemes.add(getSchemeCalendar(year, month, 3, 0, "鍋?));
+//        schemes.add(getSchemeCalendar(year, month, 6, 0, "浜?));
+//        schemes.add(getSchemeCalendar(year, month, 9, 0, "璁?));
+//        schemes.add(getSchemeCalendar(year, month, 13, 0, "璁?));
+//        schemes.add(getSchemeCalendar(year, month, 14, 0, "璁?));
+//        schemes.add(getSchemeCalendar(year, month, 15, 0, "鍋?));
+//        schemes.add(getSchemeCalendar(year, month, 18, 0, "璁?));
+//        schemes.add(getSchemeCalendar(year, month, 25, 0, "鍋?));
 //        mCalendarView.setSchemeDate(schemes);
 
         BaseViewPagerAdapter adapter = new BaseViewPagerAdapter(this, getSupportFragmentManager(), getPagers());
@@ -83,8 +83,7 @@ public class CalendarActivity extends BaseActivity implements CalendarView.OnDat
         calendar.setYear(year);
         calendar.setMonth(month);
         calendar.setDay(day);
-        calendar.setSchemeColor(color);//如果单独标记颜色、则会使用这个颜色
-        calendar.setScheme(text);
+        calendar.setSchemeColor(color);//濡傛灉鍗曠嫭鏍囪棰滆壊銆佸垯浼氫娇鐢ㄨ繖涓鑹?        calendar.setScheme(text);
         return calendar;
     }
 
@@ -109,15 +108,16 @@ public class CalendarActivity extends BaseActivity implements CalendarView.OnDat
         bundle.putSerializable("sub_tab", "tab_calendar");
 
         List<BaseViewPagerAdapter.PagerInfo> list = new ArrayList<>();
-        list.add(new BaseViewPagerAdapter.PagerInfo("要闻推送", NewsPushFragment.class,
+        list.add(new BaseViewPagerAdapter.PagerInfo("瑕侀椈鎺ㄩ€?, NewsPushFragment.class,
                 bundle));
-        list.add(new BaseViewPagerAdapter.PagerInfo("当日新闻", TodayNewsFragment.class,
+        list.add(new BaseViewPagerAdapter.PagerInfo("褰撴棩鏂伴椈", TodayNewsFragment.class,
                 bundle));
-        list.add(new BaseViewPagerAdapter.PagerInfo("事件", NewsEventFragment.class,
+        list.add(new BaseViewPagerAdapter.PagerInfo("浜嬩欢", NewsEventFragment.class,
                 bundle));
-        list.add(new BaseViewPagerAdapter.PagerInfo("浏览历史", ReadHistoryFragment.class,
+        list.add(new BaseViewPagerAdapter.PagerInfo("娴忚鍘嗗彶", ReadHistoryFragment.class,
                 bundle));
         return list;
 
     }
 }
+

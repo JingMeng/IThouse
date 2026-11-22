@@ -1,13 +1,13 @@
-package com.danmo.ithouse.fragment;
+﻿package com.danmo.ithouse.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.tabs.TabLayout;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.support.v7.view.menu.MenuBuilder;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -43,7 +43,7 @@ import java.util.List;
 import static android.os.Build.MANUFACTURER;
 
 /**
- * 资讯
+ * 璧勮
  */
 
 public class NewsFragment extends BaseFragment {
@@ -115,7 +115,7 @@ public class NewsFragment extends BaseFragment {
         pickerViewLayout = holder.get(R.id.view_tab_picker);
         searchView = holder.get(R.id.view_custom_search);
 
-        pickerViewLayout.bindViewOperator(tvPickOperator);//设置提示view
+        pickerViewLayout.bindViewOperator(tvPickOperator);//璁剧疆鎻愮ずview
 
         pickerCustomArrow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,8 +166,7 @@ public class NewsFragment extends BaseFragment {
             public void call(ViewPropertyAnimator viewPropertyAnimator) {
                 mTabNav.setVisibility(View.GONE);
                 tvPickOperator.setVisibility(View.VISIBLE);
-                EventBus.getDefault().post(new EventBusMsg(1));//隐藏底部导航栏
-                pickerCustomArrow.setPivotX(pickerCustomArrow.getMeasuredWidth() / 2);
+                EventBus.getDefault().post(new EventBusMsg(1));//闅愯棌搴曢儴瀵艰埅鏍?                pickerCustomArrow.setPivotX(pickerCustomArrow.getMeasuredWidth() / 2);
                 pickerCustomArrow.setPivotY(pickerCustomArrow.getMeasuredHeight() / 2);
                 pickerCustomArrow.setRotation(180);
             }
@@ -177,8 +176,7 @@ public class NewsFragment extends BaseFragment {
             public void call(ViewPropertyAnimator viewPropertyAnimator) {
                 mTabNav.setVisibility(View.VISIBLE);
                 tvPickOperator.setVisibility(View.GONE);
-                EventBus.getDefault().post(new EventBusMsg(0));//显示底部导航栏
-                pickerCustomArrow.setPivotX(pickerCustomArrow.getMeasuredWidth() / 2);
+                EventBus.getDefault().post(new EventBusMsg(0));//鏄剧ず搴曢儴瀵艰埅鏍?                pickerCustomArrow.setPivotX(pickerCustomArrow.getMeasuredWidth() / 2);
                 pickerCustomArrow.setPivotY(pickerCustomArrow.getMeasuredHeight() / 2);
                 pickerCustomArrow.setRotation(0);
 
@@ -343,3 +341,4 @@ public class NewsFragment extends BaseFragment {
     }
 
 }
+

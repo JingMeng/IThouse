@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2017 GcsSloop
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,10 +23,10 @@
 package com.danmo.commonapi.base;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
- * 缓存工具类，用于缓存各类数据
+ * 缂撳瓨宸ュ叿绫伙紝鐢ㄤ簬缂撳瓨鍚勭被鏁版嵁
  */
 public class CacheUtil {
 
@@ -50,3 +50,4 @@ public class CacheUtil {
         cache.remove("token");
     }
 }
+

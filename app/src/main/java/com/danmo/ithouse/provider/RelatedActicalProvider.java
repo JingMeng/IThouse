@@ -1,7 +1,7 @@
-package com.danmo.ithouse.provider;
+﻿package com.danmo.ithouse.provider;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 
 import com.danmo.commonapi.bean.newest.detail.DetailRelatedItem;
@@ -10,8 +10,7 @@ import com.danmo.commonutil.recyclerview.adapter.multitype.BaseViewProvider;
 import com.danmo.ithouse.R;
 
 /**
- * 内容详情页相关文章数据绑定
- */
+ * 鍐呭璇︽儏椤电浉鍏虫枃绔犳暟鎹粦瀹? */
 
 public class RelatedActicalProvider extends BaseViewProvider<DetailRelatedItem> {
     public RelatedActicalProvider(@NonNull Context context) {
@@ -41,3 +40,4 @@ public class RelatedActicalProvider extends BaseViewProvider<DetailRelatedItem> 
 
     }
 }
+

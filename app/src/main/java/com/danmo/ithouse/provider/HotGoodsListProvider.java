@@ -1,8 +1,8 @@
-package com.danmo.ithouse.provider;
+﻿package com.danmo.ithouse.provider;
 
 import android.content.Context;
 import android.graphics.Paint;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 辣品列表数据绑定
+ * 杈ｅ搧鍒楄〃鏁版嵁缁戝畾
  */
 
 public class HotGoodsListProvider extends BaseViewProvider<HotGoodsItem> {
@@ -42,13 +42,13 @@ public class HotGoodsListProvider extends BaseViewProvider<HotGoodsItem> {
         holder.setText(R.id.hotgoods_item_title, bean.ProductName);
 
         TextView price = holder.get(R.id.hotgoods_item_price);
-        holder.setText(R.id.hotgoods_item_price, "￥" + bean.RealPrice);
+        holder.setText(R.id.hotgoods_item_price, "锟? + bean.RealPrice);
         price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
 
         float f = (1 - Float.parseFloat(bean.DiscountRate)) * 10;
         float ff = (float) (Math.round(f * 10)) / 10;
         StringBuilder sb = new StringBuilder();
-        sb.append("(").append(ff).append("折").append(")");
+        sb.append("(").append(ff).append("鎶?).append(")");
         holder.setText(R.id.hotgoods_item_discount, sb.toString());
 
         holder.setText(R.id.hotgoods_promotion_price, bean.PromotionInfoPrice);
@@ -88,3 +88,4 @@ public class HotGoodsListProvider extends BaseViewProvider<HotGoodsItem> {
 
     }
 }
+
